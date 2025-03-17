@@ -1,0 +1,146 @@
+/* Background Image and Base Styles */
+body {
+    background-image: url('https://www.sweetprocess.com/wp-content/uploads/2022/10/task-management-20.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+/* Background Blur Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.sweetprocess.com/wp-content/uploads/2022/10/task-management-20.png') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Dark Mode Fix for Background */
+.dark-mode::before {
+    filter: blur(8px) brightness(40%);
+}
+
+/* Main content styling */
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Task Title and Description Alignment */
+.task-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-inputs input, 
+.task-inputs textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons and Form Elements */
+button, select, input, textarea {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Task List */
+#task-list {
+    margin-top: 20px;
+}
+
+/* Task Item */
+.task {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .container {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* Improved Button Styling for Dark Mode */
+.dark-mode button {
+    background-color: #666;
+    color: white;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.dark-mode button:hover {
+    background-color: #888;
+}
+
+/* Improved Input Fields in Dark Mode */
+.dark-mode input, 
+.dark-mode textarea, 
+.dark-mode select {
+    background-color: #222;
+    color: white;
+    border: 1px solid #777;
+}
+
+/* Dark Mode for Task List */
+.dark-mode .task {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #aaa;
+}
+
+.dark-mode .completed {
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .task-inputs {
+        flex-direction: column;
+    }
+
+    .task-inputs input, 
+    .task-inputs textarea {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}

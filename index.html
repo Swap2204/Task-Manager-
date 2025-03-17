@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Task Management App</h1>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle">Toggle Dark/Light Mode</button>
+
+        <!-- Task Form -->
+        <form id="task-form">
+            <div class="task-inputs">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <textarea id="task-desc" placeholder="Task Description" required></textarea>
+            </div>
+            <div class="task-options">
+                <select id="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <select id="task-category">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+                <button type="submit">Add Task</button>
+            </div>
+        </form>
+        
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search Tasks...">
+
+        <!-- Filter Buttons -->
+        <div id="filter-buttons">
+            <button class="filter-btn" data-category="All">All</button>
+            <button class="filter-btn" data-category="Personal">Personal</button>
+            <button class="filter-btn" data-category="Work">Work</button>
+            <button class="filter-btn" data-category="Urgent">Urgent</button>
+        </div>
+        <select id="sort-tasks">
+            <option value="none">Sort by Priority</option>
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
+        </select>
+        <!-- Task List -->
+        <div id="task-list"></div>
+
+        <!-- Notification -->
+        <div id="notification"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
